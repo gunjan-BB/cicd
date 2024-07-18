@@ -2,9 +2,9 @@ name: learn-github-actions
 on:
   pull_request:
     branches: 
-      - main
+      - staging
 jobs:
-  build-test:
+  build-staging:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -12,4 +12,5 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm i
-      - run: npm run build
+      - run: npm run build:staging
+
